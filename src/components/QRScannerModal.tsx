@@ -198,7 +198,7 @@ export default function QRScannerModal({
                         {component.name}
                       </div>
                       <div className="text-xs text-slate-400 dark:text-slate-500 font-mono">
-                        /#/komponen/{component.slug}
+                        ?p={component.slug}
                       </div>
                     </div>
                     <span className="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded-full font-medium">

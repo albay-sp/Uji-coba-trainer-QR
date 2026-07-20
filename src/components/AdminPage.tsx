@@ -361,7 +361,7 @@ export default function AdminPage({
                       {comp.name}
                     </div>
                     <div className="text-xs text-slate-400 dark:text-slate-500 font-mono truncate">
-                      /#/komponen/{comp.slug}
+                      ?p={comp.slug}
                     </div>
                   </div>
 
@@ -457,7 +457,7 @@ export default function AdminPage({
                       </label>
                       <div className="flex rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700">
                         <span className="bg-slate-100 dark:bg-slate-850 px-3 py-2.5 text-xs text-slate-400 font-mono border-r border-slate-200 dark:border-slate-700 flex items-center">
-                          /#/komponen/
+                          ?p=
                         </span>
                         <input
                           type="text"

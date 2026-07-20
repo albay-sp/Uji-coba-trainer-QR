@@ -83,8 +83,14 @@ export default function App() {
 
     // Check query parameter: ?p=slug
     if (pParam) {
-      setActiveComponentSlug(pParam.toLowerCase().trim());
-      setIsAdminOpen(false);
+      const cleanParam = pParam.toLowerCase().trim();
+      if (cleanParam === "admin") {
+        setIsAdminOpen(true);
+        setActiveComponentSlug(null);
+      } else {
+        setActiveComponentSlug(cleanParam);
+        setIsAdminOpen(false);
+      }
       return;
     }
 
@@ -112,7 +118,7 @@ export default function App() {
 
   // 4. Custom Navigation Wrappers
   const navigateToComponent = (slug: string) => {
-    window.history.pushState(null, "", `/#/komponen/${slug}`);
+    window.history.pushState(null, "", `/?p=${slug}`);
     setActiveComponentSlug(slug);
     setIsAdminOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -126,7 +132,7 @@ export default function App() {
   };
 
   const navigateToAdmin = () => {
-    window.history.pushState(null, "", "/#/admin");
+    window.history.pushState(null, "", "/?p=admin");
     setIsAdminOpen(true);
     setActiveComponentSlug(null);
     window.scrollTo({ top: 0, behavior: "smooth" });

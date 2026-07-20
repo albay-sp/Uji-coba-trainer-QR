@@ -71,7 +71,7 @@ export default function ComponentPage({ component, onBack }: ComponentPageProps)
   // Direct Page URL calculation
   const getFullUrl = () => {
     const origin = window.location.origin;
-    return `${origin}/#/komponen/${component.slug}`;
+    return `${origin}/?p=${component.slug}`;
   };
 
   const handleShare = async () => {

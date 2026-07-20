@@ -264,7 +264,7 @@ export default function MainPage({
         {filteredComponents.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredComponents.map((comp) => {
-              const previewUrl = `${window.location.origin}/#/komponen/${comp.slug}`;
+              const previewUrl = `${window.location.origin}/?p=${comp.slug}`;
               const quickQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(previewUrl)}`;
 
               return (
