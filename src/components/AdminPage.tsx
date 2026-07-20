@@ -314,6 +314,22 @@ export default function AdminPage({
       {/* Main Panel Grid */}
       <div className="max-w-7xl mx-auto px-4 mt-6">
         
+        {/* Hidden Admin Access Notice */}
+        <div className="bg-blue-50/75 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/50 rounded-2xl p-4 mb-6 flex items-start gap-3.5 text-blue-850 dark:text-blue-300">
+          <HelpCircle className="w-5 h-5 flex-shrink-0 text-blue-600 dark:text-blue-400 mt-0.5" />
+          <div className="text-xs space-y-1">
+            <span className="font-bold block text-sm mb-1">🔒 Informasi Akses Dashboard Admin Tersembunyi</span>
+            <p className="leading-relaxed opacity-90">
+              Tombol navigasi dan menu Admin sekarang sepenuhnya <strong>disembunyikan dari pengunjung umum</strong> di halaman depan. Untuk masuk kembali ke Dashboard Admin di masa mendatang, Anda dapat menggunakan salah satu cara berikut:
+            </p>
+            <ul className="list-disc pl-4 space-y-1 mt-1 font-medium opacity-90">
+              <li>Menambahkan parameter kueri <code className="font-mono bg-blue-100 dark:bg-blue-900/50 px-1 py-0.5 rounded text-[10px]">?p=admin</code> pada akhir alamat URL website Anda.</li>
+              <li>Melakukan <strong>Klik Ganda (Double-Click)</strong> pada Logo brand <code className="font-semibold">"EduKomponen QR"</code> di bagian kiri atas navigasi beranda.</li>
+              <li>Melakukan <strong>Klik Ganda (Double-Click)</strong> pada teks copyright <code className="font-semibold">"&copy; 2026 EduKomponen QR Lab"</code> di bagian bawah halaman beranda.</li>
+            </ul>
+          </div>
+        </div>
+
         {/* Toast Notification */}
         {notification && (
           <div className={`p-4 mb-6 rounded-2xl flex items-center gap-3 border ${

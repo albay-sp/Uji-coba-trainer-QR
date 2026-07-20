@@ -86,7 +86,11 @@ export default function MainPage({
       {/* Top Navigation Bar */}
       <nav className="bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800/80 sticky top-0 z-40 shadow-sm transition-all">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
+          <div 
+            className="flex items-center gap-2.5 cursor-pointer select-none"
+            onDoubleClick={onOpenAdmin}
+            title="EduKomponen Lab"
+          >
             <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-extrabold shadow-md shadow-blue-500/20">
               <QrCode className="w-6 h-6 animate-pulse" />
             </div>
@@ -119,17 +123,6 @@ export default function MainPage({
               title={darkMode ? "Aktifkan Mode Terang" : "Aktifkan Mode Gelap"}
             >
               {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </button>
-
-            {/* Admin link */}
-            <button
-              onClick={onOpenAdmin}
-              className="p-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-600 dark:text-slate-300 rounded-xl transition-all font-bold text-xs flex items-center gap-1"
-              id="open-admin-btn"
-              title="Dashboard Admin"
-            >
-              <Shield className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-              <span className="hidden sm:inline">Admin</span>
             </button>
           </div>
         </div>
@@ -363,24 +356,25 @@ export default function MainPage({
 
       </section>
 
-      {/* Info Help Section for SMK / Lab admins */}
+      {/* Info Help Section for students */}
       <section className="max-w-7xl mx-auto px-4 mt-16">
         <div className="bg-blue-600 rounded-3xl text-white p-8 md:p-10 shadow-lg relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent)] pointer-events-none" />
           
           <div className="space-y-3 relative z-10 max-w-xl">
-            <h3 className="text-xl md:text-2xl font-bold tracking-tight">Butuh menambahkan komponen khusus praktek Anda?</h3>
+            <h3 className="text-xl md:text-2xl font-bold tracking-tight">Siap Melakukan Praktikum Mandiri?</h3>
             <p className="text-sm text-blue-100 leading-relaxed">
-              Guru SMK atau instruktur laboratorium dapat menambahkan materi komponen kustom lengkap dengan kuis pilihan ganda langsung dari panel admin. Semua data disimpan secara instan di browser Anda!
+              Gunakan perangkat kamera ponsel Anda untuk memindai kode QR fisik yang ditempel pada alat-alat laboratorium, atau klik tombol pemindaian di atas untuk memulai simulasi interaktif.
             </p>
           </div>
 
           <div className="flex gap-3 relative z-10">
             <button
-              onClick={onOpenAdmin}
+              onClick={onOpenScanner}
               className="px-5 py-3 bg-white hover:bg-blue-50 text-blue-600 font-extrabold text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5"
             >
-              Buka Panel Admin
+              <QrCode className="w-4 h-4" />
+              Mulai Pindai Sekarang
             </button>
           </div>
         </div>
@@ -393,19 +387,19 @@ export default function MainPage({
             <p className="font-bold text-slate-600 dark:text-slate-400">EduKomponen QR Code - Website Pembelajaran Interaktif Teknik</p>
             <p className="mt-1">Dirancang khusus untuk SMK Teknik Kelistrikan, Mekatronika, Elektronika, &amp; Teknik Mesin.</p>
           </div>
-          <div>
+          <div className="select-none cursor-pointer" onDoubleClick={onOpenAdmin} title="EduKomponen Lab">
             <p className="font-mono">Pindai • Pelajari • Kuasai Materi</p>
             <p className="mt-1">&copy; 2026 EduKomponen QR Lab</p>
           </div>
         </div>
       </footer>
 
-      {/* Bottom Admin Bar */}
+      {/* Bottom Status Bar */}
       <div className="h-10 bg-slate-850 dark:bg-slate-900 text-slate-400 border-t border-slate-750 flex items-center justify-between px-8 text-[10px] shrink-0 font-sans">
         <div className="flex gap-4">
           <span>Copyright © 2026 EDU-Tech SMK</span>
           <span className="text-slate-500">•</span>
-          <button onClick={onOpenAdmin} className="hover:text-white transition-colors">Panduan Dashboard Admin</button>
+          <span>Sistem Pembelajaran Digital</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
