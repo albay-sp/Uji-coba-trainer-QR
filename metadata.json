@@ -1,0 +1,6 @@
+{
+  "name": "Edukasi Komponen QR Code",
+  "description": "Website edukasi interaktif komponen teknik berbasis scan QR Code untuk siswa SMK dan mahasiswa teknik.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
